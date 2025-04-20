@@ -46,18 +46,12 @@ This project leverages [Google's Agent Development Kit (ADK)](https://google.git
 git clone https://github.com/[username]/DataHubAI.git
 cd DataHubAI
 
-# Create and activate virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+# activate virtual environment
+source .venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Configure environment variables
-cp .env.example .env
-# Edit .env with your configuration for Google ADK
-# GOOGLE_GENAI_USE_VERTEXAI=TRUE/FALSE
-# GOOGLE_API_KEY or GOOGLE_CLOUD_PROJECT settings
 ```
 
 ### Running DataHubAI Agents

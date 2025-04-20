@@ -16,7 +16,7 @@ client = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT)
 embedder = TextEmbedding(model_name="BAAI/bge-base-en-v1.5")
 
 
-def search_tables(query: str, top_k: int = 5):
+def search_tables(query: str, top_k: int = 7):
     """Search for tables in Qdrant using a text query and return top_k results."""
     query_embedding = list(embedder.embed([query]))[0]
     search_result = client.search(
@@ -37,7 +37,7 @@ def search_tables(query: str, top_k: int = 5):
 
 if __name__ == "__main__":
     print("Searching for tables similar to 'users'...")
-    results = search_tables("users", top_k=5)
+    results = search_tables("users", top_k=7)
     for i, res in enumerate(results, 1):
         print(f"Result {i} (score={res['score']:.4f}):")
         print(res['text'])
